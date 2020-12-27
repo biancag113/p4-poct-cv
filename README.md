@@ -1,5 +1,5 @@
 # Languages
-JavaScript, Python
+JavaScript, Python, Go
 
 # Libraries and Frameworks
 React, React-Router-Dom
