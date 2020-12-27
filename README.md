@@ -5,10 +5,15 @@ JavaScript, Python, Go
 React, React-Router-Dom
 
 # Computer Vision
-Tensorflow, SSD, Jupyter Notebook
+OpenCV, Tensorflow, SSD, Jupyter Notebook
+
+# Datasets
+ImageNet for training, POCT dataset (I created this)
 
 # Cloud Resources 
-AWS Cognito Authenitcation, AWS DynamoDB Database, AWS Sagemaker Machine Learning, AWS IAM Access Controls, AWS S3 Storage, AWS SNS Messaging/Alerts
+AWS Cognito Authenitcation, AWS DynamoDB Database, AWS IAM Access Controls, AWS S3 Storage, AWS SNS Messaging/Alerts
+
+
 
 
 
