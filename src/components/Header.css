@@ -1,0 +1,11 @@
+h2 {
+    float: center;
+    font-family: futura;
+    color: rgb(255, 190, 71)
+}
+
+h3 {
+    float: left;
+    font-family: futura;
+    color: white;
+}
