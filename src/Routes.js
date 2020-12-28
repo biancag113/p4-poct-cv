@@ -6,22 +6,15 @@ import React from 'react';
 import Header from './components/Header.js';
 import Signin from './Signin.js';
 // import profile from './components/profile.png'; 
-// import Footer from './components/Footer.js';
+import Footer from './components/Footer.js';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 export const Routes = () => {
   return (
-    <div id='container'>
+    <div>
       <h2>Point of Care</h2>
-      <div id='signin'><Signin /></div>
-      <Header />
-      <Switch>
-        <Route exact path="/">
-          <Redirect to="/" />
-        </Route>
-        <Route exact path="/" component={Routes} />
-        <Route exact path="/Signin" component={Signin} />
-      </Switch>
+      <Signin />
+      <Footer />
     </div>
   );
 };
