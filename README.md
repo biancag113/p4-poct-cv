@@ -1,10 +1,10 @@
 # Languages
 JavaScript, Python, Go
 
-# Libraries and Frameworks
-React, React-Router-Dom
+# Programming Libraries and Frameworks
+React, React-Router-Dom, Numpy
 
-# Computer Vision
+# Computer Vision Libraries, Frameworks, and Technologies
 OpenCV, Tensorflow, SSD, Jupyter Notebook
 
 # Datasets
