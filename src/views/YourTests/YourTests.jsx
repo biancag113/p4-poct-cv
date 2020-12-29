@@ -5,10 +5,10 @@ import { useEffect, useState } from 'react';
 import Amplify, { API, graphqlOperation, Storage } from 'aws-amplify';
 import React from 'react';
 
-import { Paper, IconButton } from '@material-ui/core';
-import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-import PauseIcon from '@material-ui/icons/Pause';
-import ReactPlayer from 'react-player';
+import { IconButton, TextField } from '@material-ui/core';
+import AddIcon from '@material-ui/icons/Add';
+import PublishIcon from '@material-ui/icons/Publish';
+
 
 Amplify.configure(awsconfig);
 
@@ -16,6 +16,7 @@ function YourTests() {
   const [products, setProducts] = useState([]);
   const [productOn, setProductOn] = useState('')
   const [productURL, setProductURL] = useState('')
+  const [ showAddProduct, setShowAddNewProduct] = useState(false)
 
   useEffect(() => {
     fetchProducts()
@@ -73,10 +74,36 @@ function YourTests() {
             );
         })}
 
+        {
+            showAddProduct ? 
+                <AddProduct 
+                    onUpload={() => {
+                        setShowAddNewProduct(false);
+                    }}/> : 
+                <IconButton onClick={() => setShowAddNewProduct(true)}> 
+                    <AddIcon /> 
+                </IconButton>
+        }
+
       </div>
 
   );
 }
 
-
 export default YourTests
+
+const AddProduct = ({onUpload}) => {
+    const uploadSong = async () => {
+        onUpload();
+    }
+    return (
+        <div className='newProduct'>
+            <TextField 
+                label='name'
+            />
+            <IconButton onClick={uploadSong}>
+                <PublishIcon />
+            </IconButton>
+        </div>
+    )
+}

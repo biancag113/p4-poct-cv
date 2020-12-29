@@ -13,7 +13,7 @@ export const Routes = () => {
   return (
     <div>
       <h2>Point of Care</h2>
-      <Signin />
+      <div id='signin'><Signin /></div>
     </div>
   );
 };
