@@ -6,14 +6,6 @@ export const onCreateUser = /* GraphQL */ `
     onCreateUser {
       id
       username
-      avatar {
-        bucket
-        region
-        key
-        test
-        result
-        created
-      }
       createdAt
       updatedAt
     }
@@ -24,14 +16,6 @@ export const onUpdateUser = /* GraphQL */ `
     onUpdateUser {
       id
       username
-      avatar {
-        bucket
-        region
-        key
-        test
-        result
-        created
-      }
       createdAt
       updatedAt
     }
@@ -42,14 +26,6 @@ export const onDeleteUser = /* GraphQL */ `
     onDeleteUser {
       id
       username
-      avatar {
-        bucket
-        region
-        key
-        test
-        result
-        created
-      }
       createdAt
       updatedAt
     }
@@ -60,8 +36,6 @@ export const onCreateProduct = /* GraphQL */ `
     onCreateProduct {
       id
       name
-      description
-      price
       image
       createdAt
       updatedAt
@@ -73,8 +47,6 @@ export const onUpdateProduct = /* GraphQL */ `
     onUpdateProduct {
       id
       name
-      description
-      price
       image
       createdAt
       updatedAt
@@ -86,8 +58,6 @@ export const onDeleteProduct = /* GraphQL */ `
     onDeleteProduct {
       id
       name
-      description
-      price
       image
       createdAt
       updatedAt

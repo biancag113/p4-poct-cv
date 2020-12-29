@@ -4,7 +4,7 @@ import React from 'react';
 // import { About } from './views/About';
 // import NavBar from './components/NavBar.js';
 import Header from './components/Header.js';
-import Signin from './Signin.js';
+import Signin from './Signin.jsx';
 // import profile from './components/profile.png'; 
 import Footer from './components/Footer.js';
 import { Route, Switch, Redirect } from 'react-router-dom';

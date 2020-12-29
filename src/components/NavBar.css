@@ -1,4 +1,6 @@
 #navbar {
-    background: rgb(250, 183, 59);
-    color: white
+    background: transparent;
+    color: white;
+    position: sticky;
 }
+

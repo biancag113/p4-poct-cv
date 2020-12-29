@@ -6,11 +6,10 @@ export const NavBar = () => {
 
     return(
         <div id='navbar'>
-            <button><Link to="/Home">Home</Link></button>
-            <button><Link to="/YourTests">Your Tests</Link></button>
-            <button><Link to="/AddTest">Add Test</Link></button>
-            <button><Link to="/Messages">Messages</Link></button>
-            <button><Link to="/Help">Help</Link></button>
+            <button><Link style={{ textDecoration: 'none', color: '#FFF'}} to="/">Your Tests</Link></button>
+            <button><Link style={{ textDecoration: 'none', color: '#FFF' }} to="/AddTest">Add Test</Link></button>
+            <button><Link style={{ textDecoration: 'none', color: '#FFF' }} to="/Messages">Messages</Link></button>
+            <button><Link style={{ textDecoration: 'none', color: '#FFF' }} to="/Help">Help</Link></button>
       </div>
     )
 }

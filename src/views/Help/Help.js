@@ -4,10 +4,19 @@ function Help() {
     return(
         <div id="help">
             <form>
-                <input>Email</input>
-                <input>Name</input>
-                <input>Message</input>
-                <submit>Submit</submit>
+                <label>
+                     Name:
+                    <input type="text" name="name" />
+                </label>
+                <label>
+                     Email:
+                    <input type="text" name="email" />
+                </label>
+                <label>
+                     Message:
+                    <input type="text" name="message" />
+                </label>
+                <input type="submit" value="Submit" />
             </form>
         </div>
     )

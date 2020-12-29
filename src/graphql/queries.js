@@ -6,14 +6,6 @@ export const getUser = /* GraphQL */ `
     getUser(id: $id) {
       id
       username
-      avatar {
-        bucket
-        region
-        key
-        test
-        result
-        created
-      }
       createdAt
       updatedAt
     }
@@ -29,14 +21,6 @@ export const listUsers = /* GraphQL */ `
       items {
         id
         username
-        avatar {
-          bucket
-          region
-          key
-          test
-          result
-          created
-        }
         createdAt
         updatedAt
       }
@@ -49,8 +33,6 @@ export const getProduct = /* GraphQL */ `
     getProduct(id: $id) {
       id
       name
-      description
-      price
       image
       createdAt
       updatedAt
@@ -67,8 +49,6 @@ export const listProducts = /* GraphQL */ `
       items {
         id
         name
-        description
-        price
         image
         createdAt
         updatedAt
