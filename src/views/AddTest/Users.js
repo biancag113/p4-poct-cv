@@ -1,7 +1,7 @@
 import React, { useState, useReducer, useEffect } from 'react'
 import { withAuthenticator } from 'aws-amplify-react'
 import { Storage, API, graphqlOperation } from 'aws-amplify'
-import { v4 as uuid } from 'uuid'
+import uuid from 'uuid/v4'
 import { createUser as CreateUser } from './graphql/mutations'
 import { listUsers } from './graphql/queries'
 import { onCreateUser } from './graphql/subscriptions'
@@ -58,7 +58,8 @@ function App() {
     }
   }
 
-  async function createUser() {
+  async function createUser(event) {
+    event.preventDefault()
     if (!username) return alert('please enter a username')
     if (file && username) {
         const { name: fileName, type: mimeType } = file  
@@ -129,6 +130,25 @@ function App() {
       />
     </div>
   )
+
+  // async function fetchAllImages() {
+  //   try {
+  //    // fetch all items from DB
+  //    let users = await API.graphql(graphqlOperation(listUsers))
+  //    users = users.data.listUsers.items
+  //    // create Amazon S3 api calls for items in list
+  //    const userRequests = users.map(u => Storage.get(u.avatar.key))
+  //    // get signed Image URLs from S3 for each item in array by making the API call
+  //    const userData = await(Promise.all(userRequests))
+  //    // add new signed url to each item in array
+  //    users.forEach((u, i) => {
+  //      u.avatarUrl = userData[i]
+  //    })
+  //    dispatch({ type: 'SET_USERS', users })
+  //   } catch(err) {
+  //     console.log('error fetching users')
+  //   }
+  // }
 }
 
 const styles = {
@@ -150,4 +170,4 @@ const styles = {
   }
 }
 
-export default withAuthenticator(App)
+export default withAuthenticator(App, { includeGreetings: true })
