@@ -1,9 +1,12 @@
 import { AmplifyS3Image, withAuthenticator } from '@aws-amplify/ui-react';
 import awsconfig from './../../aws-exports';
-import  { listProducts } from './../../graphql/queries'
+import  { listProducts } from './../../graphql/queries';
+import { updateProduct, createProduct } from './../../graphql/mutations';
 import { useEffect, useState } from 'react';
 import Amplify, { API, graphqlOperation, Storage } from 'aws-amplify';
 import React from 'react';
+
+import { v4 as uuid } from 'uuid';
 
 import { IconButton, TextField } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
@@ -44,7 +47,6 @@ function YourTests() {
   };
 
   
-
   const fetchProducts = async () => {
     try {
         const productData = await API.graphql(graphqlOperation(listProducts))
@@ -67,7 +69,7 @@ function YourTests() {
                   <p>Name:  {product.name}</p>
                   <p>Date/Time: {product.createdAt}</p>
                   <p>Result: {product.result} </p>
-                  <p><AmplifyS3Image path={product.filePath} /></p>
+                  <p><AmplifyS3Image  path={product.filePath} /></p>
               </div>
               </div>
               </>
@@ -93,17 +95,43 @@ function YourTests() {
 export default YourTests
 
 const AddProduct = ({onUpload}) => {
-    const uploadSong = async () => {
+
+    const [productData, setProductData] = useState({});
+    const [imgData, setImgData] = useState()
+    
+
+    const uploadProduct = async () => {
+        //Upload the product
+        console.log('productData', productData)
+        const { name, result } = productData
+        const { key } = await Storage.put(`${uuid()}.jpg`, imgData, { contentType: 'image/jpg/png' });
+        const createProductInput = {
+            id: uuid(),
+            name,
+            result,
+            filePath: key
+        }
+        await API.graphql(graphqlOperation(createProduct, {input: createProductInput}))
         onUpload();
     }
+
     return (
         <div className='newProduct'>
             <TextField 
                 label='name'
+                value={productData.name}
+                onChange={e => setProductData({...productData, name: e.target.value})}
             />
-            <IconButton onClick={uploadSong}>
+            <TextField 
+                label='result'
+                value={productData.result}
+                onChange={e => setProductData({...productData, result: e.target.value})}
+            />
+            <input type='file' accept='image/jpg/png' onChange={e => setImgData(e.target.files[0])}></input>
+            <IconButton onClick={uploadProduct}>
                 <PublishIcon />
             </IconButton>
         </div>
     )
 }
+
