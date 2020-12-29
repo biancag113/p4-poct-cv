@@ -1,40 +1,55 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateTests = /* GraphQL */ `
-  subscription OnCreateTests {
-    onCreateTests {
+export const onCreateUser = /* GraphQL */ `
+  subscription OnCreateUser {
+    onCreateUser {
       id
-      name
-      description
-      image
-      created
+      username
+      avatar {
+        bucket
+        region
+        key
+        test
+        result
+        created
+      }
       createdAt
       updatedAt
     }
   }
 `;
-export const onUpdateTests = /* GraphQL */ `
-  subscription OnUpdateTests {
-    onUpdateTests {
+export const onUpdateUser = /* GraphQL */ `
+  subscription OnUpdateUser {
+    onUpdateUser {
       id
-      name
-      description
-      image
-      created
+      username
+      avatar {
+        bucket
+        region
+        key
+        test
+        result
+        created
+      }
       createdAt
       updatedAt
     }
   }
 `;
-export const onDeleteTests = /* GraphQL */ `
-  subscription OnDeleteTests {
-    onDeleteTests {
+export const onDeleteUser = /* GraphQL */ `
+  subscription OnDeleteUser {
+    onDeleteUser {
       id
-      name
-      description
-      image
-      created
+      username
+      avatar {
+        bucket
+        region
+        key
+        test
+        result
+        created
+      }
       createdAt
       updatedAt
     }

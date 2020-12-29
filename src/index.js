@@ -6,6 +6,11 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Routes } from './Routes.js'; // where we are going to specify our routes
 
+import Amplify from 'aws-amplify';
+import config from './aws-exports';
+
+Amplify.configure(config)
+
 ReactDOM.render(
   <Router>
     <Routes />

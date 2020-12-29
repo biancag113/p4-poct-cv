@@ -1,7 +1,14 @@
-type Tests @model {
+type User @model {
   id: ID!
-  name: String!
-  description: String
-  image: String
+  username: String!
+  avatar: S3Object
+}
+
+type S3Object {
+  bucket: String!
+  region: String!
+  key: String!
+  test: String!
+  result: String!
   created: AWSDateTime
 }

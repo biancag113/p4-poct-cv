@@ -1,49 +1,64 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createTests = /* GraphQL */ `
-  mutation CreateTests(
-    $input: CreateTestsInput!
-    $condition: ModelTestsConditionInput
+export const createUser = /* GraphQL */ `
+  mutation CreateUser(
+    $input: CreateUserInput!
+    $condition: ModelUserConditionInput
   ) {
-    createTests(input: $input, condition: $condition) {
+    createUser(input: $input, condition: $condition) {
       id
-      name
-      description
-      image
-      created
+      username
+      avatar {
+        bucket
+        region
+        key
+        test
+        result
+        created
+      }
       createdAt
       updatedAt
     }
   }
 `;
-export const updateTests = /* GraphQL */ `
-  mutation UpdateTests(
-    $input: UpdateTestsInput!
-    $condition: ModelTestsConditionInput
+export const updateUser = /* GraphQL */ `
+  mutation UpdateUser(
+    $input: UpdateUserInput!
+    $condition: ModelUserConditionInput
   ) {
-    updateTests(input: $input, condition: $condition) {
+    updateUser(input: $input, condition: $condition) {
       id
-      name
-      description
-      image
-      created
+      username
+      avatar {
+        bucket
+        region
+        key
+        test
+        result
+        created
+      }
       createdAt
       updatedAt
     }
   }
 `;
-export const deleteTests = /* GraphQL */ `
-  mutation DeleteTests(
-    $input: DeleteTestsInput!
-    $condition: ModelTestsConditionInput
+export const deleteUser = /* GraphQL */ `
+  mutation DeleteUser(
+    $input: DeleteUserInput!
+    $condition: ModelUserConditionInput
   ) {
-    deleteTests(input: $input, condition: $condition) {
+    deleteUser(input: $input, condition: $condition) {
       id
-      name
-      description
-      image
-      created
+      username
+      avatar {
+        bucket
+        region
+        key
+        test
+        result
+        created
+      }
       createdAt
       updatedAt
     }
