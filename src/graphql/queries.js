@@ -33,7 +33,8 @@ export const getProduct = /* GraphQL */ `
     getProduct(id: $id) {
       id
       name
-      image
+      result
+      filePath
       createdAt
       updatedAt
     }
@@ -49,7 +50,8 @@ export const listProducts = /* GraphQL */ `
       items {
         id
         name
-        image
+        result
+        filePath
         createdAt
         updatedAt
       }

@@ -14,7 +14,6 @@ export const Routes = () => {
     <div>
       <h2>Point of Care</h2>
       <Signin />
-      <Footer />
     </div>
   );
 };

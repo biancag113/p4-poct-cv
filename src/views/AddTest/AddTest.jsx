@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Camera from 'react-camera';
+import Amplify, { Storage } from 'aws-amplify';
+import awsconfig from './../../aws-exports';
 
+Amplify.configure(awsconfig);
 
 export default class AddTest extends Component {
 
@@ -12,16 +15,31 @@ export default class AddTest extends Component {
   takePicture() {
     this.camera.capture()
     .then(blob => {
+
         //creates image blob
-      this.img.src = URL.createObjectURL(blob);
-        //removes Blob reference from the internal mapping, Blob deleted
+      this.img.src = URL.createObjectURL(blob);  
+
+      //uploads image blob to S3 bucket
+      const file = this.blob;
+      Storage.put('example.png', file, {
+          contentType: 'image/png'
+      })
+      .then (result => console.log(result))
+      .catch(err => console.log(err));
+  
+        //removes Blob reference from the internal mapping, Blob deleted 
       this.img.onload = () => { URL.revokeObjectURL(this.src); }
     })
   }
 
   render() {
-    return (            
+    return (        
       <div style={style.container}>
+
+        {/* <input
+              type="file" accept='image/png'
+              onChange={(evt) => this.onChange(evt)}
+          /> */}
 
         <Camera
           style={style.preview}
@@ -43,6 +61,30 @@ export default class AddTest extends Component {
     );
   }
 }
+
+//////
+
+// class S3ImageUpload extends React.Component {
+  // onChange(e) {
+  //     const file = e.target.files[0];
+  //     Storage.put('example.png', file, {
+  //         contentType: 'image/png'
+  //     })
+  //     .then (result => console.log(result))
+  //     .catch(err => console.log(err));
+  // }
+
+//   render() {
+//       return (
+//           <input
+//               type="file" accept='image/png'
+//               onChange={(evt) => this.onChange(evt)}
+//           />
+//       )
+//   }
+// }
+//////
+
 
 const style = {
   container: {

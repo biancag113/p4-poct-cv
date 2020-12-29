@@ -36,7 +36,8 @@ export const onCreateProduct = /* GraphQL */ `
     onCreateProduct {
       id
       name
-      image
+      result
+      filePath
       createdAt
       updatedAt
     }
@@ -47,7 +48,8 @@ export const onUpdateProduct = /* GraphQL */ `
     onUpdateProduct {
       id
       name
-      image
+      result
+      filePath
       createdAt
       updatedAt
     }
@@ -58,7 +60,8 @@ export const onDeleteProduct = /* GraphQL */ `
     onDeleteProduct {
       id
       name
-      image
+      result
+      filePath
       createdAt
       updatedAt
     }

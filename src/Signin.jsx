@@ -6,62 +6,65 @@ import { AddTest } from './views/AddTest';
 import { Help } from './views/Help';
 import { Messages } from './views/Messages';
 import { Routes } from './Routes.js';
+import { YourTests } from './views/YourTests';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import  { listProducts } from './graphql/queries'
-import { useEffect, useState } from 'react';
-import Amplify, { API, graphqlOperation } from 'aws-amplify';
+// import  { listProducts } from './graphql/queries'
+// import { useEffect, useState } from 'react';
+import Amplify from 'aws-amplify';
+
 
 Amplify.configure(awsconfig);
 
 function Signin() {
-  const [products, setProducts] = useState([]);
+  // const [products, setProducts] = useState([]);
 
-  useEffect(() => {
-    fetchProducts()
-  }, [])
+  // useEffect(() => {
+  //   fetchProducts()
+  // }, [])
 
-  const fetchProducts = async () => {
-    try {
-        const productData = await API.graphql(graphqlOperation(listProducts))
-        const productList = productData.data.listProducts.items;
-        console.log('product list', productList);
-        setProducts(productList);
-    } catch (error) {
-        console.log('error on fetching products', error)
-    }
-  }
+  // const fetchProducts = async () => {
+  //   try {
+  //       const productData = await API.graphql(graphqlOperation(listProducts))
+  //       const productList = productData.data.listProducts.items;
+  //       console.log('product list', productList);
+  //       setProducts(productList);
+  //   } catch (error) {
+  //       console.log('error on fetching products', error)
+  //   }
+  // }
 
   return (
     <div id="App">
+
       <header>
         <AmplifySignOut className='signout' />
         <NavBar className='navbar' />
       </header>
-      <div className='productList'>
+
+      {/* <div className='productList'>
         { products.map(product => {
             return(
               <>
               <div id='productframe'>
-              <p>Test: {product.name}</p>
-              <p>Image: {product.image}</p>
-              <p>Date: {product.createdAt}</p>
-              </div> 
+                  <p>Name:  {product.name}</p>
+                  <p>Date/Time: {product.createdAt}</p>
+                  <p>Image: {product.image}</p>
+              </div>
               </>
             )
-        })}
-      </div>
+        })} */}
 
       <Switch>
         <Route exact path="/">
           <Redirect to="/" />
         </Route>
         <Route exact path="/" component={Routes} />
+        <Route exact path="/YourTests" component={YourTests} />
         <Route exact path="/AddTest" component={AddTest} />
         <Route exact path="/Help" component={Help} />
         <Route exact path="/Messages" component={Messages} />
       </Switch>
-
-    </div>
+      </div>
   );
 }
 

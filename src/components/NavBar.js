@@ -6,8 +6,8 @@ export const NavBar = () => {
 
     return(
         <div id='navbar'>
-            <button><Link style={{ textDecoration: 'none', color: '#FFF'}} to="/">Your Tests</Link></button>
-            <button><Link style={{ textDecoration: 'none', color: '#FFF' }} to="/AddTest">Add Test</Link></button>
+            <button><Link style={{ textDecoration: 'none', color: '#FFF' }} to="/YourTests">Your Tests</Link></button>
+            <button><Link style={{ textDecoration: 'none', color: '#FFF' }} to="/AddTest">Add Tests</Link></button>
             <button><Link style={{ textDecoration: 'none', color: '#FFF' }} to="/Messages">Messages</Link></button>
             <button><Link style={{ textDecoration: 'none', color: '#FFF' }} to="/Help">Help</Link></button>
       </div>

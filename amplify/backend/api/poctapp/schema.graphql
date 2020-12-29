@@ -6,7 +6,8 @@ type User @model {
 type Product @model {
   id: ID
   name: String
-  image: String
+  result: String
+  filePath: String
 }
 
 
