@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Camera from 'react-camera';
 
+
 export default class AddTest extends Component {
 
   constructor(props) {

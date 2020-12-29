@@ -1,5 +1,7 @@
-type Todo @model {
+type Tests @model {
   id: ID!
   name: String!
   description: String
+  image: String
+  created: AWSDateTime
 }

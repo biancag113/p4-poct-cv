@@ -1,5 +1,11 @@
 {
-    "AppSyncApiName": "poctapp",
-    "DynamoDBBillingMode": "PAY_PER_REQUEST",
-    "DynamoDBEnableServerSideEncryption": false
+  "AppSyncApiName": "poctapp",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authpoctapp8cee07b1",
+      "Outputs.UserPoolId"
+    ]
+  }
 }
