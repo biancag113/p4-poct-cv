@@ -2,7 +2,7 @@
 JavaScript, Python
 
 # Programming Libraries and Frameworks
-React, React-Router-Dom, Numpy, AWS-SDK, AWS-Amplify
+React, GraphQL, React-Router-Dom, Numpy, AWS-SDK, AWS-Amplify
 
 # Computer Vision Libraries, Frameworks, and Technologies
 OpenCV, Tensorflow, SSD, Jupyter Notebook
