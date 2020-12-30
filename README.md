@@ -1,5 +1,5 @@
 # Languages
-JavaScript, Python, Go
+JavaScript, Python
 
 # Programming Libraries and Frameworks
 React, React-Router-Dom, Numpy, AWS-SDK, AWS-Amplify
