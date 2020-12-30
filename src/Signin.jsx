@@ -16,43 +16,19 @@ import Amplify from 'aws-amplify';
 Amplify.configure(awsconfig);
 
 function Signin() {
-  // const [products, setProducts] = useState([]);
 
-  // useEffect(() => {
-  //   fetchProducts()
-  // }, [])
-
-  // const fetchProducts = async () => {
-  //   try {
-  //       const productData = await API.graphql(graphqlOperation(listProducts))
-  //       const productList = productData.data.listProducts.items;
-  //       console.log('product list', productList);
-  //       setProducts(productList);
-  //   } catch (error) {
-  //       console.log('error on fetching products', error)
-  //   }
-  // }
 
   return (
     <div id="App">
 
       <header>
         <AmplifySignOut className='signout' />
-        <NavBar className='navbar' />
+        {/* <NavBar className='navbar' /> */}
+        <AddTest />
       </header>
 
-      {/* <div className='productList'>
-        { products.map(product => {
-            return(
-              <>
-              <div id='productframe'>
-                  <p>Name:  {product.name}</p>
-                  <p>Date/Time: {product.createdAt}</p>
-                  <p>Image: {product.image}</p>
-              </div>
-              </>
-            )
-        })} */}
+    <body><YourTests /></body>
+    
 
       <Switch>
         <Route exact path="/">

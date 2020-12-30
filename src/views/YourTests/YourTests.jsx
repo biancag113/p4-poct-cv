@@ -1,13 +1,17 @@
+//ReactJS
+import React, { useEffect, useState } from 'react';
+
+//AWS 
 import { AmplifyS3Image, withAuthenticator } from '@aws-amplify/ui-react';
 import awsconfig from './../../aws-exports';
 import  { listProducts } from './../../graphql/queries';
 import { updateProduct, createProduct } from './../../graphql/mutations';
-import { useEffect, useState } from 'react';
 import Amplify, { API, graphqlOperation, Storage } from 'aws-amplify';
-import React from 'react';
 
+//uuid library to provide unique id to jpeg
 import { v4 as uuid } from 'uuid';
 
+//material-ui
 import { IconButton, TextField } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 import PublishIcon from '@material-ui/icons/Publish';
@@ -133,5 +137,3 @@ function YourTests() {
   }
   
   export default YourTests;
-
-

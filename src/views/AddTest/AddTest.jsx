@@ -21,8 +21,8 @@ export default class AddTest extends Component {
 
       //uploads image blob to S3 bucket
       const file = this.blob;
-      Storage.put('example.png', file, {
-          contentType: 'image/png'
+      Storage.put(`${Date.now()}.jpg`, file, {
+          contentType: 'image/jpg'
       })
       .then (result => console.log(result))
       .catch(err => console.log(err));
@@ -62,29 +62,6 @@ export default class AddTest extends Component {
   }
 }
 
-//////
-
-// class S3ImageUpload extends React.Component {
-  // onChange(e) {
-  //     const file = e.target.files[0];
-  //     Storage.put('example.png', file, {
-  //         contentType: 'image/png'
-  //     })
-  //     .then (result => console.log(result))
-  //     .catch(err => console.log(err));
-  // }
-
-//   render() {
-//       return (
-//           <input
-//               type="file" accept='image/png'
-//               onChange={(evt) => this.onChange(evt)}
-//           />
-//       )
-//   }
-// }
-//////
-
 
 const style = {
   container: {
@@ -117,4 +94,3 @@ const style = {
     width: '50%',
   }
 };
-

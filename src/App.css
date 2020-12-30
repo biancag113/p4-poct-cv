@@ -2,6 +2,7 @@
   background-color: white
 }
 
+
 h2 {
   font-family: futura;
   color: orange;
@@ -17,13 +18,15 @@ h2 {
 }
 
 #addButton {
+  width: 200px;
   position: absolute;
   top: 50px;
   padding: 10px;
 }
 
 .newProduct {
-  position: center;
+  width: 200px;
+  position: left;
   top: 50px;
   padding: 10px;
 }
