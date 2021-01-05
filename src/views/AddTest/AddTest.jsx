@@ -48,7 +48,7 @@ export default class AddTest extends Component {
           }}
         >
           <div style={style.captureContainer} onClick={this.takePicture}>
-            <div style={style.captureButton} />
+            <div id='imgbutton' style={style.captureButton} />
           </div>
         </Camera>
         <img
@@ -65,32 +65,34 @@ export default class AddTest extends Component {
 
 const style = {
   container: {
-    margin: 'auto',
+    margin: '20px',
     width: '50%',
   },
   preview: {
-    margin: 'auto',
+    marginLeft: '500px',
+    marginTop: '20px',
     width: '50%',
   },
   captureContainer: {
+    margin: '10px',
     display: 'flex',
     position: 'absolute',
     justifyContent: 'center',
-    bottom: '10px',
-    width: '50%'
+    width: '50%',
+    height: '50%'
   },
   captureButton: {
-    margin: 'auto',
+    marginTop: '10px',
     width: '50%',
-    backgroundColor: 'white',
-    borderColor: 'orange',
+    backgroundColor: 'green',
+    borderColor: 'lightgreen',
     borderStyle: 'solid',
     borderRadius: '30%',
     height: 56,
     width: 56
   },
   captureImage: {
-    margin: 'auto',
+    marginTop: '10px',
     width: '50%',
   }
 };

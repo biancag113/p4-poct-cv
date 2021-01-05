@@ -24,10 +24,12 @@ function Signin() {
       <header>
         <AmplifySignOut className='signout' />
         {/* <NavBar className='navbar' /> */}
-        <AddTest />
       </header>
 
-    <body><YourTests /></body>
+    <body>
+      <AddTest />
+      <YourTests />
+      </body>
     
 
       <Switch>
