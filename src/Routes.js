@@ -11,10 +11,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 
 export const Routes = () => {
   return (
-    <div>
-      <h2>Point of Care</h2>
       <div id='signin'><Signin /></div>
-    </div>
   );
 };
 
